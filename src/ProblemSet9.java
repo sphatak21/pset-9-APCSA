@@ -2,7 +2,8 @@ import java.util.*;
 
 public class ProblemSet9 {
     public static void main(String[] args){
-        System.out.println("");
+        int[] arr = new int[] {1, 2, 3, 4, 100};
+        System.out.println(new ProblemSet9().outliers(arr));
     }
     public int[] evenOdd(int[] arr) {
         if(arr == null || arr.length == 0){
@@ -79,7 +80,7 @@ public class ProblemSet9 {
         }
         int count = 0;
         for(int i = 0; i < a.length; i++){
-            if(Math.abs(a[i] - b[i]) < 3){
+            if(Math.abs(a[i] - b[i]) < 3 && Math.abs(a[i] - b[i])>0){
                 count++;
             }
         }
@@ -92,7 +93,7 @@ public class ProblemSet9 {
         }
         boolean twos = false;
         boolean fours = false;
-        for(int i = 0; i < arr.length; i ++){
+        for(int i = 0; i < arr.length -1; i ++){
             if(arr[i] == 2 || arr[i] == 4){
                 if(arr[i + 1] == arr[i]){
                     if(arr[i] == 2){
@@ -132,7 +133,7 @@ public class ProblemSet9 {
         for(int i : avg){
             sum+=i;
         }
-        return sum;
+        return sum/avg.size();
     }
 
     public int outliers(int[] arr) {
